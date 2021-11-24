@@ -17,7 +17,7 @@ O conteúdo foi dividido em três níveis.
 | Arquitetura de Computadores | Cálculo 2/3 | Linguagens Formais e Autômatos |
 | Programação Imperativa em baixo nível | Arquitetura de Software | Compiladores |
 | Programação Orientada ao Objeto | Programação Funcional | Sistemas Operacionais |
-| Redes | Banco de dados | Computação Gráfica |   
+| Redes | Banco de dados | Computação Gráfica | 
 | Estrutura de Dados Básica | Arquitetura de Computadores 2| Estrutura de Dados Avançados |
 
 
