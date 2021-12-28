@@ -1,0 +1,171 @@
+<template>
+  <header id="mainly-menu">
+    <nav class="container">
+      <div class="branding">
+        <router-link class="header" :to="{ name: 'Inicio' }"
+          ><mappleLeaf class="icon" /> Roadmap</router-link
+        >
+      </div>
+      <div class="nav-links">
+        <ul v-show="!mobile">
+          <router-link class="link" :to="{ name: 'Contato' }"
+            >Sobre nós</router-link
+          >
+          <router-link class="link" :to="{ name: 'Percurso' } ">Percurso</router-link>
+          <router-link class="link" :to="{ name: 'Referencias' }"
+            >Referências</router-link
+          >
+        </ul>
+      </div>
+    </nav>
+    <menuIcon @click="toggleMobileNav" class="menu-icon" v-show="mobile" />
+    <transition name="mobile-nav">
+      <ul class="mobile-nav" v-show="mobileNav">
+        <router-link class="link" :to="{ name: 'Contact' }">About us</router-link>
+        <router-link class="link" to="#">RoadMap</router-link>
+        <router-link class="link" :to="{ name: 'References' }">References</router-link>
+      </ul>
+    </transition>
+  </header>
+</template>
+
+<script>
+import mappleLeaf from "../assets/Icons/mapple-leaf.svg";
+import menuIcon from "../assets/Icons/bars-regular.svg";
+
+export default {
+  name: "navigation",
+  components: { mappleLeaf, menuIcon },
+  data() {
+    return {
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null,
+    };
+  },
+  created() {
+    window.addEventListener("resize", this.checkScreen);
+    this.checkScreen();
+  },
+  methods: {
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    },
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
+    changeLang(e){
+      if(e.target.value == "en")
+        console.log("English my friend")
+      else
+        console.log("Portugues amg")
+    }
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+header {
+  padding: 0 25px;
+  z-index: 99;
+
+  .link {
+    transition: 0.3s color ease;
+    padding: 0 8px;
+
+    &:hover {
+      border-bottom: 1px solid white;
+    }
+  }
+
+  nav {
+    display: flex;
+    padding: 15px 150px;
+
+    @media (max-width: 950px) {
+      padding: 15px 0;
+    }
+    .branding {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links {
+      position: relative;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: flex-end;
+      padding-left: 20px;
+      ul {
+        margin-right: 32px;
+
+        .link {
+          margin-right: 32px;
+        }
+
+        .link:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    height: 25px;
+    width: auto;
+    path {
+      fill: #fff;
+    }
+    @media (max-width: 600px) {
+      height: 20px;
+    }
+  }
+
+  .mobile-nav {
+    padding: 20px;
+    width: 70%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    background-color: #303030;
+    top: 0;
+    left: 0;
+
+    .link {
+      padding: 15px 0;
+      color: #fff;
+    }
+  }
+
+  .mobile-nav-enter-active,
+  .mobile-nav-leave-active {
+    transition: all 1s ease;
+  }
+
+  .mobile-nav-enter {
+    transform: translateX(-250px);
+  }
+
+  .mobile-nav-enter-to {
+    transform: translateX(0);
+  }
+
+  .mobile-nav-leave-to {
+    transform: translateX(-250px);
+  }
+}
+</style>
