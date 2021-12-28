@@ -36,10 +36,14 @@ export default {
   mounted() {
     this.selectElm = document.querySelector("#lang");
     this.path = window.location.pathname;
-    if (/en/.test(this.path)) {
+    if (/\ben\b/.test(this.path)) {
       this.selectElm.value = "en";
-    } else {
+      this.en = true
+      this.ptBR = false
+   } else {
       this.selectElm.value = "pt-br";
+      this.ptBR = true
+      this.en = false
     }
   },
   methods: {
@@ -48,11 +52,10 @@ export default {
       if (e.target.value == "en") {
         this.en = true;
         this.ptBR = false;
-      } else {
+      } else if(e.target.value == "pt-br") {
         this.ptBR = true;
         this.en = false;
       }
-      console.log(this.path);
       switch (this.path) {
         case "/":
           if (this.en) {
@@ -64,8 +67,6 @@ export default {
         case "/en":
           if (this.ptBR) {
             window.location.href = "/";
-          } else {
-            console.log("pt nao on");
           }
           break;
 

@@ -19,7 +19,7 @@
           </span>
         </small>
         <div class="switch-info" v-show="this.switch">
-          <h3 v-show="this.switch">Check out the channell</h3>
+          <h3 v-show="this.switch">Veja este canal</h3>
           <Click class="icon icon-light"/>
         </div>
       </div>

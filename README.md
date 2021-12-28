@@ -2,6 +2,14 @@
 
 Um website que contém uma trajetória com perspectivas diferentes baseado na experiência como um estudante Bacharelado em Ciências da Computação. Nada como um mapa mental para organizar a programação de estudos.
 
+## Execução
+
+Para rodar a aplicação web no servidor local, use o comando:
+
+```
+ npm run serve
+```
+
 ### Objetivo
 
 O projeto têm como proposta traçar uma rota de aprendizado propriamente para adquirir os conceitos fundamentais da Computação. Além disso, têm a intenção de demonstrar as áreas de atividade de um cientista da computação agregando o conhecimento necessário para trabalhar em cada setor.
