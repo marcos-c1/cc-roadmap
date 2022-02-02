@@ -12,7 +12,7 @@
         <a href="https://github.com/marcos-c1/cc-roadmap" target="_blank">
           <ul>
             <li>
-                Star
+                <img src="../assets/Icons/star.png" alt="" class="star-img" srcset="">
             </li>
             <li><Github class="icon" /></li>
           </ul>
@@ -64,6 +64,10 @@ footer {
         display: flex;
         li {
           padding: 5px 10px;
+          .star-img {
+            width: 25px;
+            height: 25px;
+          }
         }
         li:last-child {
           padding-left: 0px;

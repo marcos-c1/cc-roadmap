@@ -75,14 +75,13 @@ export default {
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   background: #fff;
   .logo {
-    width: 200px;
     margin-top: 40px;
   }
   @media (min-width: 450px) {
     margin: 0px;
     .logo {
       width: 200px;
-      height: 200px;
+      height: 150px;
     }
     .container-row > div {
       padding-top: 30px;
@@ -105,7 +104,7 @@ export default {
     margin: 0px;
     .logo {
       width: 200px;
-      height: 200px;
+      height: 150px;
     }
     .container-row > div {
       padding-top: 30px;
@@ -127,8 +126,8 @@ export default {
   @media (min-width: 800px) {
     margin: 0px;
     .logo {
-      width: 250px;
-      height: 250px;
+      width: 200px;
+      height: 150px;
     }
     .container-row > div {
       padding-top: 30px;
@@ -151,7 +150,7 @@ export default {
   @media (min-width: 950px) {
     margin: 0 100px;
     .logo {
-      width: 200px;
+      width: 250px;
       height: 200px;
     }
     .container-row > div {
@@ -176,7 +175,7 @@ export default {
     margin: 0 150px;
     .logo {
       width: 250px;
-      height: 250px;
+      height: 200px;
     }
     .container-row > div {
       padding-top: 30px;

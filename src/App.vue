@@ -4,8 +4,11 @@
       <Navigation_EN v-if="this.en" />
       <Navigation v-else />
       <select name="language" id="lang" @change="changeLang">
-        <option value="pt-br">Portuguese - Brazil</option>
-        <option value="en">English</option>
+        <option v-if="this.en" value="pt-br">Portuguese - Brazil</option>
+        <option v-else value="pt-br">Português - Brasil</option>
+
+        <option v-if="this.en" value="en">English</option>
+        <option v-else value="en">Inglês</option>
       </select>
       <router-view />
       <Footer_EN v-if="this.en" />
