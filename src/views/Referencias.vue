@@ -67,7 +67,7 @@ export default {
       programming: [
         {
           title: "C - The complete reference",
-          url: "https://github.com/manjunath4496/Computer-Science-Reference-Books/blob/master/comp(9).pdf",
+          url: "https://github.com/manjunath5496/Computer-Science-Reference-Books/blob/master/comp(9).pdf",
         },
         {
           title:
